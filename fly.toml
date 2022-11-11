@@ -1,0 +1,31 @@
+app = "ts3-server"
+
+[build]
+  image = "teamspeak:latest"
+
+[env]
+  TS3SERVER_LICENSE="accept"
+
+[mounts]
+  source = "ts3_data"
+  destination = "/var/ts3server"
+
+[[services]]
+  internal_port = 30033
+  protocol = "tcp"
+
+  [[services.ports]]
+    port = "30033"
+
+  [[services.tcp_checks]]
+    grace_period = "1s"
+    interval = "60s"
+    restart_limit = 0
+    timeout = "5s"
+
+[[services]]
+  internal_port = 9987
+  protocol = "udp"
+
+  [[services.ports]]
+    port = "9987"
