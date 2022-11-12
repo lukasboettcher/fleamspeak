@@ -1,5 +1,6 @@
 # fleamspeak
-Run a teamspeak3 server on fly.io!
+Run a [Teamspeak 3](https://teamspeak.com/en/) server on [fly.io](https://fly.io)!
+
 
 ## How to run
 
